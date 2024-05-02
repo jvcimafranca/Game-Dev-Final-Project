@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
             playerAnimator.SetBool("isJumping", true);
+            
             Debug.Log("Jumping");
         }
 
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
         if(IsGrounded())
         {
             Debug.Log("NotJumping");
+            playerAnimator.SetBool("isJumping", false);
             coyoteCounter = coyoteTime;
             jumpCounter = extraJumps;
         }
@@ -80,17 +82,20 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {   
+        
         if(coyoteCounter<=0 && jumpCounter<=0) return;
 
         if(IsGrounded())
         {
             body.velocity = new Vector2(body.velocity.x, jumpForce);
+            // playerAnimator.SetTrigger("isJumping");
         }
         else
         {
             if(coyoteCounter>0)
             {
                 body.velocity = new Vector2(body.velocity.x, jumpForce);
+                // playerAnimator.SetTrigger("isJumping");
             }
             else
             {
@@ -115,13 +120,13 @@ public class PlayerController : MonoBehaviour
 
         if (horizontalInput > 0.01f)
         {
-            transform.localScale = new Vector3(-1.5f,1.5f,1.5f);
+            transform.localScale = new Vector3(-2f,2f,2f);
             playerAnimator.SetBool("isWalking", true);
         }
 
         else if (horizontalInput < -0.01f)
         {
-            transform.localScale = new Vector3(1.5f,1.5f,1.5f);
+            transform.localScale = new Vector3(2f,2f,2f);
             playerAnimator.SetBool("isWalking", true);
         }
         
