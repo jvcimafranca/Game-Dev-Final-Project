@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump() 
     {   
+        // playerAnimator.SetBool("isJumping", true); 
         if (IsGrounded() || coyoteCounter > 0 || jumpCounter > 0) {
             body.velocity = new Vector2(body.velocity.x, jumpForce); // Apply jump force
             
