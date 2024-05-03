@@ -27,44 +27,28 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        
+
         Flip();
 
-
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            Jump();
-            playerAnimator.SetBool("isJumping", true);
-            
-            Debug.Log("Jumping");
-        }
-
-        else if (Input.GetButtonDown("Jump") && body.velocity.y > 0f)
-        {
-            body.velocity = new Vector2(body.velocity.x, body.velocity.y * 0.5f);
-            Debug.Log("SideJumping");
-        }
-
-        
-        if(IsGrounded())
-        {
-            Debug.Log("NotJumping");
-            playerAnimator.SetBool("isJumping", false);
+        // Coyote Time Management
+        if (IsGrounded()) {
             coyoteCounter = coyoteTime;
-            jumpCounter = extraJumps;
+            jumpCounter = extraJumps; // Reset jumpCounter when grounded
+            playerAnimator.SetBool("isJumping", false); // Reset jumping animation
+        } else {
+            coyoteCounter -= Time.deltaTime; // Decrease coyoteCounter over time
         }
 
-        else
-        {
-            coyoteCounter -= Time.deltaTime;
+        if (Input.GetButtonDown("Jump")) {
+            if (coyoteCounter > 0 || jumpCounter > 0) {
+                Jump(); // Trigger jump if within coyote time or if additional jumps are available
+            }
         }
-        
-        
-        
     }
+
 
     private void FixedUpdate()
     {
@@ -80,35 +64,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Jump()
+    void Jump() 
     {   
-        
-        if(coyoteCounter<=0 && jumpCounter<=0) return;
-
-        if(IsGrounded())
-        {
-            body.velocity = new Vector2(body.velocity.x, jumpForce);
-            // playerAnimator.SetTrigger("isJumping");
-        }
-        else
-        {
-            if(coyoteCounter>0)
-            {
-                body.velocity = new Vector2(body.velocity.x, jumpForce);
-                // playerAnimator.SetTrigger("isJumping");
-            }
-            else
-            {
-                if(jumpCounter>0)
-                {
-                    body.velocity = new Vector2(body.velocity.x, jumpForce);
-                    jumpCounter--;
+        if (IsGrounded() || coyoteCounter > 0 || jumpCounter > 0) {
+            body.velocity = new Vector2(body.velocity.x, jumpForce); // Apply jump force
+            
+            if (!IsGrounded()) {
+                if (jumpCounter > 0) {
+                    jumpCounter--; // Decrement extra jumps when using double jump
                 }
             }
+
+            coyoteCounter = 0; // Reset coyote time after jumping
         }
-        coyoteCounter = 0;
-        
-    }
+    }   
     private bool IsGrounded()
     {
         // Debug.Log("On Ground");
@@ -120,13 +89,13 @@ public class PlayerController : MonoBehaviour
 
         if (horizontalInput > 0.01f)
         {
-            transform.localScale = new Vector3(-2f,2f,2f);
+            transform.localScale = new Vector3(-1.5f,1.5f,1.5f);
             playerAnimator.SetBool("isWalking", true);
         }
 
         else if (horizontalInput < -0.01f)
         {
-            transform.localScale = new Vector3(2f,2f,2f);
+            transform.localScale = new Vector3(1.5f,1.5f,1.5f);
             playerAnimator.SetBool("isWalking", true);
         }
         

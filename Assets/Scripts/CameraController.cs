@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
     // private float lookAhead;
     private void Start()
     {
-        currentPosX= -94.7f;
+        currentPosX= -94.3f;
     }
     private void Update()
     {
