@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     
     private float horizontalInput;
+    private float verticalInput;
     [SerializeField] private float moveSpeed = 8f;
     [SerializeField] private float jumpForce = 15f;
     // private bool isFacingRight = true;
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
     void Update() 
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
 
         Flip();
 
@@ -46,6 +48,9 @@ public class PlayerController : MonoBehaviour
             if (coyoteCounter > 0 || jumpCounter > 0) {
                 Jump(); // Trigger jump if within coyote time or if additional jumps are available
             }
+        }
+        if(verticalInput<-0.01f){
+            body.velocity = new Vector2(body.velocity.x, -jumpForce);
         }
     }
 
