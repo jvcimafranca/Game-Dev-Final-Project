@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public float currentHealth{get; private set;}
     private Animator playerAnimator;
     private bool dead;
+    private PlayerRespawn respawnPlayer;
     void Start()
     {
         playerAnimator = GetComponent<Animator>(); 
@@ -15,6 +16,7 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         currentHealth = startingHealth;
+        respawnPlayer = GetComponent<PlayerRespawn>();
     }
 
     public void TakeDamage(float _damage)
@@ -30,9 +32,10 @@ public class Health : MonoBehaviour
         {
             if(!dead)
             {
-                playerAnimator.SetTrigger("Die");
+                // playerAnimator.SetTrigger("Die");
                 GetComponent<PlayerController>().enabled = false;
                 dead = true;
+
             }
            
         }
@@ -43,12 +46,30 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
     }
 
+    public void Respawn()
+    {
+        dead = false;
+        AddHealth(startingHealth);
+        GetComponent<PlayerController>().enabled = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
             TakeDamage(1);
+        }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            AddHealth(1);
+        }
+
+        if(dead)
+        {
+            Respawn();
+            respawnPlayer.Respawn();
+
         }
     }
 }
