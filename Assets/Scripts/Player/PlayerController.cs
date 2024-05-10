@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update() 
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        
         verticalInput = Input.GetAxisRaw("Vertical");
 
         Flip();
@@ -57,7 +57,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (horizontalInput > 0.01f || horizontalInput < -0.01f){
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        // if (horizontalInput > 0.01f || horizontalInput < -0.01f){
+        if(horizontalInput!=0)
+        {
 
             body.velocity = new Vector2(horizontalInput * moveSpeed, body.velocity.y);
             playerAnimator.SetBool("isWalking", true);

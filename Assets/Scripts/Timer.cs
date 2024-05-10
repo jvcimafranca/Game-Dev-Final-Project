@@ -19,8 +19,10 @@ public class Timer : MonoBehaviour
         // {
             // if (timeRemaining > 0)
             // {
+
                 timeElapsed += UnityEngine.Time.deltaTime;
-                timerText.text = "  TIME ELAPSED: " + Mathf.Round(timeElapsed);
+                // timerText.text = "  TIME ELAPSED: " + DisplayTime(timeElapsed);
+                DisplayTime(timeElapsed);
             // }
 
             // if(timeElapsed<=0)
@@ -28,5 +30,14 @@ public class Timer : MonoBehaviour
                 // gameManager.DisplayGameOver();
             // }
         // }
+    }
+
+    void DisplayTime(float timeToDisplay)
+    {
+        timeToDisplay+=1;
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);  
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+
+        timerText.text = string.Format("  TIME ELAPSED: <color=#00BF63>{0:00}:{1:00}", minutes, seconds);
     }
 }
