@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Checkpoint
+  - State-Driven Camera
+  - State-Driven Camera2
   layers:
   - Default
   - TransparentFX
