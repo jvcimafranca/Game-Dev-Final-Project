@@ -16,6 +16,8 @@ public class PlayerSwitch : MonoBehaviour
         // player2Controller = GetComponent<PlayerController>();
         camera1 =  GameObject.FindGameObjectWithTag("State-Driven Camera");
         camera2 =  GameObject.FindGameObjectWithTag("State-Driven Camera2");
+        camera1.SetActive(true);
+        camera2.SetActive(false);
     }
 
     // Update is called once per frame

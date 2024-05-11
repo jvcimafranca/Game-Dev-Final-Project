@@ -8,6 +8,7 @@ TagManager:
   - Checkpoint
   - State-Driven Camera
   - State-Driven Camera2
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - UI
   - Ground
   - Background
-  - 
+  - Box
   - 
   - 
   - 
