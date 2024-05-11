@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int levelToChange;
+    [SerializeField] int levelToRestart;
     [SerializeField] private GameObject pauseScreen;
-    [SerializeField] private GameObject titleScreen;
+    // [SerializeField] private GameObject titleScreen;
     [SerializeField] private GameObject inGameScreen;
     private bool isGameActive=false;
     // void Start()
@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        titleScreen.gameObject.SetActive(true);
-        inGameScreen.gameObject.SetActive(false);
+        // titleScreen.gameObject.SetActive(true);
+        // inGameScreen.gameObject.SetActive(false);
         pauseScreen.SetActive(false);
     }
     
@@ -42,37 +42,41 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        // SceneManager.LoadScene(1);
+        // StartGame();
+        Time.timeScale = 1;
+        SceneManager.LoadScene(levelToRestart);
+
         
     }
 
     public void StartGame()
     {
         isGameActive =  true;
-        // SceneManager.LoadScene(2);
+        SceneManager.LoadScene(2);
         // SceneManager.LoadScene(1);
-        titleScreen.gameObject.SetActive(false);
-        inGameScreen.gameObject.SetActive(true);
+        // titleScreen.gameObject.SetActive(false);
+        // inGameScreen.gameObject.SetActive(true);
         // gameOverText.gameObject.SetActive(false);
 
     }
 
     public void Quit()
     {
-        // Application.Quit();
+        Application.Quit();
 
     }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(pauseScreen.activeInHierarchy)
+            if(pauseScreen.activeInHierarchy && IsGameActive())
                 PauseGame(false);
             else    
                 PauseGame(true);
 
         }
     }
+    
     public void PauseGame(bool status)
     {
         pauseScreen.SetActive(status);
@@ -85,7 +89,14 @@ public class GameManager : MonoBehaviour
 
     public void ExitGame()
     {
-        titleScreen.gameObject.SetActive(true);
-        inGameScreen.gameObject.SetActive(false);
+        // titleScreen.gameObject.SetActive(true);
+        // inGameScreen.gameObject.SetActive(false);
+        SceneManager.LoadScene(1);
     }
+
+    // public void RestartGame()
+    // {
+    //     titleScreen.gameObject.SetActive(false);
+    //     inGameScreen.gameObject.SetActive(true);
+    // }
 }
