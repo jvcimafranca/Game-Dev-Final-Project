@@ -8,14 +8,23 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] int levelToChange;
+    [SerializeField] private GameObject pauseScreen;
+    [SerializeField] private GameObject titleScreen;
+    [SerializeField] private GameObject inGameScreen;
     private bool isGameActive=false;
-    void Start()
-    {
-        // titleText.gameObject.SetActive(true);
-        // gameOverText.gameObject.SetActive(false);
-        // timeScoreText.gameObject.SetActive(false);
-    }
+    // void Start()
+    // {
+    //     titleScreen.gameObject.SetActive(true);
+    //     // gameOverText.gameObject.SetActive(false);
+    //     // timeScoreText.gameObject.SetActive(false);
+    // }
 
+    private void Awake()
+    {
+        titleScreen.gameObject.SetActive(true);
+        inGameScreen.gameObject.SetActive(false);
+        pauseScreen.SetActive(false);
+    }
     
     public void DisplayGameOver()
     {
@@ -40,15 +49,43 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         isGameActive =  true;
-        SceneManager.LoadScene(2);
+        // SceneManager.LoadScene(2);
         // SceneManager.LoadScene(1);
-        // titleText.gameObject.SetActive(false);
-        // timeScoreText.gameObject.SetActive(true);
+        titleScreen.gameObject.SetActive(false);
+        inGameScreen.gameObject.SetActive(true);
         // gameOverText.gameObject.SetActive(false);
 
-        
-        
+    }
 
+    public void Quit()
+    {
+        // Application.Quit();
 
+    }
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(pauseScreen.activeInHierarchy)
+                PauseGame(false);
+            else    
+                PauseGame(true);
+
+        }
+    }
+    public void PauseGame(bool status)
+    {
+        pauseScreen.SetActive(status);
+
+        if (status)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
+    }
+
+    public void ExitGame()
+    {
+        titleScreen.gameObject.SetActive(true);
+        inGameScreen.gameObject.SetActive(false);
     }
 }
