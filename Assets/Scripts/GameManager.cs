@@ -8,9 +8,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] int levelToRestart;
+    [SerializeField] private GameObject titleScreen;
+    [SerializeField] private GameObject introVid;
     [SerializeField] private GameObject pauseScreen;
-    // [SerializeField] private GameObject titleScreen;
     [SerializeField] private GameObject inGameScreen;
+    [SerializeField] private GameObject skipButton;
     private bool isGameActive=false;
     // void Start()
     // {
@@ -52,7 +54,14 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         isGameActive =  true;
-        SceneManager.LoadScene(2);
+        titleScreen.gameObject.SetActive(false);
+        introVid.gameObject.SetActive(true);
+        skipButton.gameObject.SetActive(false);
+        Invoke("DelayedSkip", 3f);
+        Invoke("StopIntro",54f);
+        
+
+        // SceneManager.LoadScene(2);
         // SceneManager.LoadScene(1);
         // titleScreen.gameObject.SetActive(false);
         // inGameScreen.gameObject.SetActive(true);
@@ -94,9 +103,20 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    // public void RestartGame()
-    // {
-    //     titleScreen.gameObject.SetActive(false);
-    //     inGameScreen.gameObject.SetActive(true);
-    // }
+    private void StopIntro()
+    {
+        introVid.gameObject.SetActive(false);
+        SceneManager.LoadScene(2);
+    }
+
+    public void SkipIntro()
+    {
+        SceneManager.LoadScene(levelToRestart);
+    }
+
+    private void DelayedSkip()
+    {
+        skipButton.gameObject.SetActive(true);
+    }
+
 }
