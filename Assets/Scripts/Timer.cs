@@ -4,12 +4,13 @@ using UnityEngine;
 using TMPro;
 public class Timer : MonoBehaviour
 {
-    // [SerializeField] private GameManager gameManager;
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private TextMeshProUGUI timerText;
     private float timeElapsed=0f;
     void Start()
     {
-        timerText.text = "TIME: " + timeElapsed;
+        timerText.text = "  TIME ELAPSED: <color=#00BF63>{0:00}:{1:00}" + timeElapsed;
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
     }
 

@@ -7,12 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int levelToRestart;
+    [SerializeField] int currentLevel;
+    [SerializeField] int nextLevel;
     [SerializeField] private GameObject titleScreen;
     [SerializeField] private GameObject introVid;
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject inGameScreen;
     [SerializeField] private GameObject skipButton;
+    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private GameObject completeLevel;
     private bool isGameActive=false;
     // void Start()
     // {
@@ -30,8 +33,15 @@ public class GameManager : MonoBehaviour
     
     public void DisplayGameOver()
     {
+        isGameActive =  false;
+        gameOverScreen.gameObject.SetActive(true);
+        // timeScoreText.gameObject.SetActive(false);
+        // ghoulSpawner.isSpawning = false; // Stop spawning ghouls when the game is over
+    }
+     public void DisplayCompleteLevel()
+    {
         // isGameActive =  false;
-        // gameOverText.gameObject.SetActive(true);
+        completeLevel.gameObject.SetActive(true);
         // timeScoreText.gameObject.SetActive(false);
         // ghoulSpawner.isSpawning = false; // Stop spawning ghouls when the game is over
     }
@@ -45,8 +55,9 @@ public class GameManager : MonoBehaviour
     {
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         // StartGame();
+        isGameActive =  true;
         Time.timeScale = 1;
-        SceneManager.LoadScene(levelToRestart);
+        SceneManager.LoadScene(currentLevel);
 
         
     }
@@ -106,17 +117,24 @@ public class GameManager : MonoBehaviour
     private void StopIntro()
     {
         introVid.gameObject.SetActive(false);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(nextLevel);
     }
 
     public void SkipIntro()
     {
-        SceneManager.LoadScene(levelToRestart);
+        isGameActive =  true;
+        SceneManager.LoadScene(nextLevel);
     }
 
     private void DelayedSkip()
     {
         skipButton.gameObject.SetActive(true);
+    }
+
+    public void NextLevel()
+    {
+        isGameActive =  true;
+        SceneManager.LoadScene(nextLevel);
     }
 
 }

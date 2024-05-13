@@ -5,13 +5,16 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
+    [SerializeField] private GameManager gameManager;
     public float currentHealth{get; private set;}
     private Animator playerAnimator;
     private bool dead;
     private PlayerRespawn respawnPlayer;
+
     void Start()
     {
         playerAnimator = GetComponent<Animator>(); 
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     private void Awake()
     {
@@ -68,7 +71,8 @@ public class Health : MonoBehaviour
         if(dead)
         {
             Respawn();
-            respawnPlayer.Respawn();
+            // respawnPlayer.Respawn();
+            gameManager.DisplayGameOver();
 
         }
     }

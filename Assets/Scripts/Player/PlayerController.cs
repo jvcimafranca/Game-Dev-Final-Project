@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnimator;
     [SerializeField] private float coyoteTime;
     private float coyoteCounter;
+    [SerializeField] private GameManager gameManager;
 
     [SerializeField] private float extraJumps;
     private float jumpCounter;
@@ -25,52 +26,58 @@ public class PlayerController : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update() 
     {
-        
-        verticalInput = Input.GetAxisRaw("Vertical");
+        // if(gameManager.IsGameActive())
+        // {
+            verticalInput = Input.GetAxisRaw("Vertical");
 
-        Flip();
+            Flip();
 
-        // Coyote Time Management
-        if (IsGrounded()) {
-            coyoteCounter = coyoteTime;
-            jumpCounter = extraJumps; // Reset jumpCounter when grounded
-            playerAnimator.SetBool("isJumping", false); // Reset jumping animation
-        } else {
-            coyoteCounter -= Time.deltaTime; // Decrease coyoteCounter over time
-        }
-
-        if (Input.GetButtonDown("Jump")) {
-            if (coyoteCounter > 0 || jumpCounter > 0) {
-                Jump(); // Trigger jump if within coyote time or if additional jumps are available
+            // Coyote Time Management
+            if (IsGrounded()) {
+                coyoteCounter = coyoteTime;
+                jumpCounter = extraJumps; // Reset jumpCounter when grounded
+                playerAnimator.SetBool("isJumping", false); // Reset jumping animation
+            } else {
+                coyoteCounter -= Time.deltaTime; // Decrease coyoteCounter over time
             }
-        }
-        if(verticalInput<-0.01f){
-            body.velocity = new Vector2(body.velocity.x, -jumpForce);
-        }
+
+            if (Input.GetButtonDown("Jump")) {
+                if (coyoteCounter > 0 || jumpCounter > 0) {
+                    Jump(); // Trigger jump if within coyote time or if additional jumps are available
+                }
+            }
+            if(verticalInput<-0.01f){
+                body.velocity = new Vector2(body.velocity.x, -jumpForce);
+            }
+        // }
     }
 
 
     private void FixedUpdate()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        // if(gameManager.IsGameActive())
+        // {
+            horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        // if (horizontalInput > 0.01f || horizontalInput < -0.01f){
-        if(horizontalInput!=0)
-        {
+            // if (horizontalInput > 0.01f || horizontalInput < -0.01f){
+            if(horizontalInput!=0)
+            {
 
-            body.velocity = new Vector2(horizontalInput * moveSpeed, body.velocity.y);
-            playerAnimator.SetBool("isWalking", true);
+                body.velocity = new Vector2(horizontalInput * moveSpeed, body.velocity.y);
+                playerAnimator.SetBool("isWalking", true);
 
-        }
-        else
-        {
-            playerAnimator.SetBool("isWalking", false);
-        }
+            }
+            else
+            {
+                playerAnimator.SetBool("isWalking", false);
+            }
+        // }
     }
 
     void Jump() 
