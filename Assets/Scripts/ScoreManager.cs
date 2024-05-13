@@ -10,14 +10,14 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         score = 0;
-        scoreText.text = "ORBS COLLECTED: " + score;
+        scoreText.text = "  ORBS COLLECTED: " + "<color=#00BF63>" + score + "</color>";
         // finalScoreText.text = "FINAL SCORE: " + score;
     }
 
    public void UpdateScore(int score)
    {
     this.score += score;
-    scoreText.text = "ORBS COLLECTED: " + this.score;
+    scoreText.text = "  ORBS COLLECTED: " + "<color=#00BF63>" + this.score + "</color>";
     // finalScoreText.text = "FINAL SCORE: " + this.score;
    }
 }

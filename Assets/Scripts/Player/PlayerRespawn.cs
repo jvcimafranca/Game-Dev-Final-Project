@@ -37,6 +37,7 @@ public class PlayerRespawn : MonoBehaviour
             currentCheckpoint = collision.transform;
             // add sound
             collision.GetComponent<Collider2D>().enabled = false;
+           
         }
     }
 }
