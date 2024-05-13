@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour
 {
    private int score;
     [SerializeField] private TextMeshProUGUI scoreText;
-    // [SerializeField] private TextMeshProUGUI finalScoreText;
+    [SerializeField] private TextMeshProUGUI orbsCollectedText;
     void Start()
     {
         score = 0;
@@ -18,6 +18,6 @@ public class ScoreManager : MonoBehaviour
    {
     this.score += score;
     scoreText.text = "  ORBS COLLECTED: " + "<color=#00BF63>" + this.score + "</color>";
-    // finalScoreText.text = "FINAL SCORE: " + this.score;
+    orbsCollectedText.text = "TOTAL ORBS COLLECTED:   " + "<color=#00BF63>" + this.score + "</color>";
    }
 }

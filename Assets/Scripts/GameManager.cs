@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject skipButton;
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject completeLevel;
-    private bool isGameActive=false;
+    [SerializeField]private bool isGameActive=false;
     // void Start()
     // {
     //     titleScreen.gameObject.SetActive(true);
@@ -35,13 +35,15 @@ public class GameManager : MonoBehaviour
     {
         isGameActive =  false;
         gameOverScreen.gameObject.SetActive(true);
+        inGameScreen.gameObject.SetActive(false);
         // timeScoreText.gameObject.SetActive(false);
         // ghoulSpawner.isSpawning = false; // Stop spawning ghouls when the game is over
     }
      public void DisplayCompleteLevel()
     {
-        // isGameActive =  false;
+        isGameActive =  false;
         completeLevel.gameObject.SetActive(true);
+        inGameScreen.gameObject.SetActive(false);
         // timeScoreText.gameObject.SetActive(false);
         // ghoulSpawner.isSpawning = false; // Stop spawning ghouls when the game is over
     }
@@ -135,6 +137,16 @@ public class GameManager : MonoBehaviour
     {
         isGameActive =  true;
         SceneManager.LoadScene(nextLevel);
+    }
+
+    public void SoundVolume()
+    {
+
+    }
+
+    public void MusicVolume()
+    {
+        
     }
 
 }

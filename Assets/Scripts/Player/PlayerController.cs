@@ -32,8 +32,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update() 
     {
-        // if(gameManager.IsGameActive())
-        // {
+        if(gameManager.IsGameActive())
+        {
             verticalInput = Input.GetAxisRaw("Vertical");
 
             Flip();
@@ -55,14 +55,14 @@ public class PlayerController : MonoBehaviour
             if(verticalInput<-0.01f){
                 body.velocity = new Vector2(body.velocity.x, -jumpForce);
             }
-        // }
+        }
     }
 
 
     private void FixedUpdate()
     {
-        // if(gameManager.IsGameActive())
-        // {
+        if(gameManager.IsGameActive())
+        {
             horizontalInput = Input.GetAxisRaw("Horizontal");
 
             // if (horizontalInput > 0.01f || horizontalInput < -0.01f){
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
             {
                 playerAnimator.SetBool("isWalking", false);
             }
-        // }
+        }
     }
 
     void Jump() 

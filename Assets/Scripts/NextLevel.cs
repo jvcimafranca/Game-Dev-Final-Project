@@ -29,6 +29,7 @@ public class NextLevel : MonoBehaviour
             
             // completeLevel.gameObject.SetActive(true);
             gameManager.DisplayCompleteLevel();
+            
             Debug.Log("Interacted w/ Portal!");
             
         }
