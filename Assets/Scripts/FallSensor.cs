@@ -23,6 +23,7 @@ public class FallSensor : MonoBehaviour
         if(collision.tag == "Player1" || collision.tag == "Player2")
         {
             collision.GetComponent<Health>().TakeDamage(damage);
+            // Destroy(collision.gameObject);
         }
     }
 }
