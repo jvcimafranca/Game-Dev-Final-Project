@@ -11,7 +11,7 @@ public class PlayerSwitch : MonoBehaviour
     [SerializeField] GameObject camera1;
     [SerializeField] GameObject camera2;
     // [SerializeField] GameObject camera3;
-    private int activePlayer = 1;
+    // private int activePlayer = 1;
 
     void Start()
     {
@@ -52,12 +52,12 @@ public class PlayerSwitch : MonoBehaviour
             case 1:
                 playerController.enabled = true;
                 camera1.SetActive(true);
-                activePlayer = 1;
+                // activePlayer = 1;
                 break;
             case 2:
                 player2Controller.enabled = true;
                 camera2.SetActive(true);
-                activePlayer = 2;
+                // activePlayer = 2;
                 break;
             // case 3:
             //     player3Controller.enabled = true;

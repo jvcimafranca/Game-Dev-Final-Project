@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
     [SerializeField] private float moveSpeed = 8f;
+    // [SerializeField] private float walkSpeed = 1f;
     [SerializeField] private float jumpForce = 15f;
+    [SerializeField] private float decelerationRate = 0.1f;
     // private bool isFacingRight = true;
     [SerializeField] private Rigidbody2D body;
     [SerializeField] private Transform groundCheck;
@@ -27,7 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float minY = -5f;
     [SerializeField] private float maxY = 5f;
     private float jumpCounter;
-    // private bool isOnGround = false;
+    private float currentSpeed;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -67,25 +69,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     private void FixedUpdate()
     {
-        if(gameManager.IsGameActive())
+        if (gameManager.IsGameActive())
         {
             horizontalInput = Input.GetAxisRaw("Horizontal");
 
-            // if (horizontalInput > 0.01f || horizontalInput < -0.01f){
-            if(horizontalInput!=0)
+            if (Mathf.Abs(horizontalInput) > 0.25f)
             {
-
-                body.velocity = new Vector2(horizontalInput * moveSpeed, body.velocity.y);
+                currentSpeed = Mathf.Lerp(currentSpeed, horizontalInput * moveSpeed, decelerationRate);
                 playerAnimator.SetBool("isWalking", true);
-
             }
             else
             {
+                currentSpeed = Mathf.Lerp(currentSpeed, 0, decelerationRate);
                 playerAnimator.SetBool("isWalking", false);
             }
+
+            body.velocity = new Vector2(currentSpeed, body.velocity.y);
         }
     }
 

@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI timeTakenText;
-    private float timeElapsed=0f;
+    // private float timeElapsed=0f;
     [SerializeField] private float timeRemaining = 120f; // 2 minutes
     void Start()
     {

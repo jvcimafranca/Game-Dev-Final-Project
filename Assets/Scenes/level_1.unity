@@ -5887,6 +5887,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6266,6 +6270,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6326,6 +6334,10 @@ PrefabInstance:
     - target: {fileID: 3776522969203533607, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
       propertyPath: m_Name
       value: Spike (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7026,6 +7038,10 @@ PrefabInstance:
     - target: {fileID: 3776522969203533607, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
       propertyPath: m_Name
       value: Spike (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8370,6 +8386,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Size.x
+      value: 2.910136
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2024765
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.975068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.015619278
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8436,6 +8468,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8807065
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.15428352
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.96035326
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.039715767
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8497,6 +8545,10 @@ PrefabInstance:
     - target: {fileID: 3776522969203533607, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
       propertyPath: m_Name
       value: Spike (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9629,6 +9681,22 @@ PrefabInstance:
     - target: {fileID: 3776522969203533607, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
       propertyPath: m_Name
       value: Spike (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8760417
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2110672
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.9580208
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.011323929
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18243,7 +18311,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 1282131684}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 33ba3e213ab9b0e448dd9716921bc847, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -23859,6 +23927,14 @@ PrefabInstance:
       value: -66
       objectReference: {fileID: 0}
     - target: {fileID: 3537686848416547423, guid: cf539df15b55df043b97b5b8b6229467, type: 3}
+      propertyPath: moveSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537686848416547423, guid: cf539df15b55df043b97b5b8b6229467, type: 3}
+      propertyPath: walkSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537686848416547423, guid: cf539df15b55df043b97b5b8b6229467, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 406832824}
@@ -26073,6 +26149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27378,6 +27458,10 @@ PrefabInstance:
     - target: {fileID: 3776522969203533607, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
       propertyPath: m_Name
       value: Spike (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30353,6 +30437,22 @@ PrefabInstance:
     - target: {fileID: 3776522969203533607, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
       propertyPath: m_Name
       value: Spike
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8789967
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16716194
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.45949835
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352936293690509639, guid: 7dbf9979838b4b64d9c51e2c6b5e766c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.033276558
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

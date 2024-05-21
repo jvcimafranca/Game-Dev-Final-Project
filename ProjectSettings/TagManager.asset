@@ -10,6 +10,7 @@ TagManager:
   - State-Driven Camera2
   - Player1
   - Player2
+  - Boxes
   layers:
   - Default
   - TransparentFX
