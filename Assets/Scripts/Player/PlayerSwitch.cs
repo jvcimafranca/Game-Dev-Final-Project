@@ -7,7 +7,8 @@ public class PlayerSwitch : MonoBehaviour
     
     [SerializeField] PlayerController playerController;
     [SerializeField] PlayerController player2Controller;
-    // [SerializeField] PlayerController player3Controller;
+    // [SerializeField] private PlayerAttack playerAttack;
+    // [SerializeField] private PlayerAttack playerAttack2;
     [SerializeField] GameObject camera1;
     [SerializeField] GameObject camera2;
     // [SerializeField] GameObject camera3;
@@ -17,6 +18,8 @@ public class PlayerSwitch : MonoBehaviour
     {
         camera1 = GameObject.FindGameObjectWithTag("State-Driven Camera");
         camera2 = GameObject.FindGameObjectWithTag("State-Driven Camera2");
+        // playerAttack = GetComponent<PlayerAttack>();
+        // playerAttack2 = GetComponent<PlayerAttack>();
         // camera3 = GameObject.FindGameObjectWithTag("State-Driven Camera3");
 
         SwitchToPlayer(1);
@@ -42,7 +45,13 @@ public class PlayerSwitch : MonoBehaviour
     {
         playerController.enabled = false;
         player2Controller.enabled = false;
-        // player3Controller.enabled = false;
+        // playerAttack.enabled = false;
+        // playerAttack2.enabled = false;
+        PlayerAttack player2Attack = player2Controller.GetComponent<PlayerAttack>();
+        if (player2Attack != null)
+        {
+            player2Attack.enabled = false;
+        }
         camera1.SetActive(false);
         camera2.SetActive(false);
         // camera3.SetActive(false);
@@ -52,12 +61,16 @@ public class PlayerSwitch : MonoBehaviour
             case 1:
                 playerController.enabled = true;
                 camera1.SetActive(true);
+                // playerAttack.enabled = true;
                 // activePlayer = 1;
                 break;
             case 2:
                 player2Controller.enabled = true;
                 camera2.SetActive(true);
-                // activePlayer = 2;
+                if (player2Attack != null)
+                {
+                    player2Attack.enabled = true;
+                }
                 break;
             // case 3:
             //     player3Controller.enabled = true;
