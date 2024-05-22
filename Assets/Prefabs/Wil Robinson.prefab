@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 7432068760473998839}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.2, y: -2.88, z: -2.7}
+  m_LocalPosition: {x: -124.2, y: -55.9, z: -2.7}
   m_LocalScale: {x: -1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -314,13 +314,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   jumpForce: 18
+  decelerationRate: 0.1
   body: {fileID: 1146918570138257163}
   groundCheck: {fileID: 7882556430920833618}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   coyoteTime: 0.25
+  gameManager: {fileID: 0}
   extraJumps: 1
+  minX: -10
+  maxX: 10
+  minY: -5
+  maxY: 5
 --- !u!114 &5051809719063930245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  gameManager: {fileID: 0}
 --- !u!114 &7295248759652878417
 MonoBehaviour:
   m_ObjectHideFlags: 0
