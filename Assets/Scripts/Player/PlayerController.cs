@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxY = 5f;
     private float jumpCounter;
     private float currentSpeed;
+    private bool enemyInProximity = false;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -46,6 +47,14 @@ public class PlayerController : MonoBehaviour
 
             Flip();
 
+            if(enemyInProximity)
+            {
+                extraJumps = 0;
+            }
+            else 
+            {
+                extraJumps = 1;
+            }
             // Coyote Time Management
             if (IsGrounded()) {
                 coyoteCounter = coyoteTime;
@@ -141,5 +150,25 @@ public class PlayerController : MonoBehaviour
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, minX, maxX);
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, minY, maxY);
         transform.position = clampedPosition;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // When the player enters the trigger zone, set the flag to true
+        if (collision.CompareTag("EnemyProximity"))
+        {
+            enemyInProximity = true;
+            Debug.Log("Enemy in Proximity");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // When the player exits the trigger zone, reset the flag to false
+        if (collision.CompareTag("EnemyProximity"))
+        {
+            enemyInProximity = false;
+            Debug.Log("Enemy in Proximity");
+        }
     }
 }

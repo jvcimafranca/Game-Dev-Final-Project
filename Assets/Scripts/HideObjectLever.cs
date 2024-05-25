@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerLever : MonoBehaviour
+public class HideObjectLever : MonoBehaviour
 {
     private bool isPlayerInRange = false;
-    [SerializeField] private GameObject portal;
-    // [SerializeField] private GameObject hideObject;
+    // [SerializeField] private GameObject portal;
+    [SerializeField] private GameObject hideObject;
 
     // Update is called once per frame
     void Update()
@@ -19,8 +19,8 @@ public class TriggerLever : MonoBehaviour
             transform.localScale = currentScale;
             
             Debug.Log("Lever Flipped");
-            portal.SetActive(true);
-            // hideObject.SetActive(false);
+            // portal.SetActive(true);
+            hideObject.SetActive(false);
         }
     }
 
@@ -43,5 +43,4 @@ public class TriggerLever : MonoBehaviour
             Debug.Log("Player exited trigger zone");
         }
     }
-
 }

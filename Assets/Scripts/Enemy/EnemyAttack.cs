@@ -27,11 +27,12 @@ public class EnemyAttack : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // When the player enters the trigger zone, set the flag to true
-        if (collision.gameObject.CompareTag("Player2"))
+        if (collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player1"))
         {
             isPlayerInRange = true;
             Debug.Log("Player entered trigger zone");
             animator.SetBool("isAttack", true);
+
 
         }
     }
@@ -39,7 +40,7 @@ public class EnemyAttack : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         // When the player exits the trigger zone, set the flag to false
-        if (collision.gameObject.CompareTag("Player2"))
+        if (collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player1"))
         {
             isPlayerInRange = false;
             Debug.Log("Player exited trigger zone");

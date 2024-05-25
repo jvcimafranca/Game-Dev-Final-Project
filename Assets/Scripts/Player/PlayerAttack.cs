@@ -36,7 +36,13 @@ public class PlayerAttack : MonoBehaviour
         {
             // isPlayerInRange = true;
             Debug.Log("Enemy is hit!");
-            Destroy(collision.gameObject);
+            // Destroy(collision.gameObject);
+
+            EnemyDie enemy = collision.gameObject.GetComponent<EnemyDie>();
+            if (enemy != null)
+            {
+                enemy.TakeHit(); // Increment the hit counter
+            }
         }
     }
 
