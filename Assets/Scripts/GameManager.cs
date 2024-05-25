@@ -66,6 +66,14 @@ public class GameManager : MonoBehaviour
     public void ShowConfirmation()
     {
         restartConfirmation.gameObject.SetActive(true);
+        pauseScreen.gameObject.SetActive(false);
+        // PauseGame(true);
+    }
+
+    public void CancelConfirmation()
+    {
+        restartConfirmation.gameObject.SetActive(false);
+        PauseGame(false);
     }
 
     public void StartGame()

@@ -1187,7 +1187,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116632972}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8c469bb0d52cf394aa67f82c04fd8c39, type: 3}
@@ -3914,7 +3914,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 592, y: -90}
+  m_AnchoredPosition: {x: 592, y: -47}
   m_SizeDelta: {x: 334, y: 67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &350164217
@@ -3963,8 +3963,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406832824}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: PauseGame
-        m_Mode: 6
+        m_MethodName: CancelConfirmation
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5564,7 +5564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -78, y: -90}
+  m_AnchoredPosition: {x: -78, y: -47}
   m_SizeDelta: {x: 334, y: 67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472560732
@@ -6872,8 +6872,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " \nRestarting the game will result in the loss of all progress in this
-    level. \nAre you sure you want to proceed?\n\n"
+  m_text: " \nWarning: Restarting the game will erase all your progress in this level.
+    \n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6fb09c12258ab62438a4002d5a36c021, type: 2}
   m_sharedMaterial: {fileID: -8794032273534476157, guid: 6fb09c12258ab62438a4002d5a36c021, type: 2}
@@ -8520,7 +8520,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 237, y: 108.20392}
-  m_SizeDelta: {x: 1489.4297, y: 604.7875}
+  m_SizeDelta: {x: 1489.4297, y: 496.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &751693264
 MonoBehaviour:
@@ -25619,7 +25619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " \nAre you sure you want to restart?\n\n"
+  m_text: " \n\nAre you sure you want to restart the Game?\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6fb09c12258ab62438a4002d5a36c021, type: 2}
   m_sharedMaterial: {fileID: -8794032273534476157, guid: 6fb09c12258ab62438a4002d5a36c021, type: 2}
@@ -31875,7 +31875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2004324531}
   m_Layer: 0
-  m_Name: Confirmation Screen
+  m_Name: Restart Confirmation Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

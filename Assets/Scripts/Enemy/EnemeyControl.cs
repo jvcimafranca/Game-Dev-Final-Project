@@ -7,6 +7,7 @@ public class EnemyControl : MonoBehaviour
     // public Transform rightPoint; 
     [SerializeField] private float leftPoint = 0;
     [SerializeField] private float rightPoint = 0;
+    [SerializeField] private float zPosition = -0.85f;
     // private Animator animator;
 
     private bool movingRight = true;
@@ -27,6 +28,10 @@ public class EnemyControl : MonoBehaviour
         // Move towards the target position
         Vector2 targetPosition = new Vector2(targetX, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+        // Move towards the target position while keeping the z position fixed
+        // Vector3 targetPosition = new Vector3(targetX, transform.position.y, zPosition);
+        // transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
 
         // If reached the target position, change direction and flip the enemy
         if (Mathf.Abs(transform.position.x - targetX) < 0.1f)
