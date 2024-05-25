@@ -27,7 +27,7 @@ public class NextLevel : MonoBehaviour
             // SceneManager.LoadScene(levelToChange);
             // Time.timeScale = 0; // pause
             
-            // completeLevel.gameObject.SetActive(true);
+            completeLevel.gameObject.SetActive(true);
             gameManager.DisplayCompleteLevel();
             
             Debug.Log("Interacted w/ Portal!");

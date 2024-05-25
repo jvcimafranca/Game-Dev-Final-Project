@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] int currentLevel;
     [SerializeField] int nextLevel;
     [SerializeField] private GameObject titleScreen;
+    [SerializeField] private GameObject settingsScreen;
     [SerializeField] private GameObject introVid;
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject inGameScreen;
     [SerializeField] private GameObject skipButton;
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject completeLevel;
+    [SerializeField] private GameObject restartConfirmation;
     [SerializeField]private bool isGameActive=false;
     // void Start()
     // {
@@ -42,7 +44,6 @@ public class GameManager : MonoBehaviour
      public void DisplayCompleteLevel()
     {
         isGameActive =  false;
-        completeLevel.gameObject.SetActive(true);
         inGameScreen.gameObject.SetActive(false);
         // timeScoreText.gameObject.SetActive(false);
         // ghoulSpawner.isSpawning = false; // Stop spawning ghouls when the game is over
@@ -60,8 +61,11 @@ public class GameManager : MonoBehaviour
         isGameActive =  true;
         Time.timeScale = 1;
         SceneManager.LoadScene(currentLevel);
+    }
 
-        
+    public void ShowConfirmation()
+    {
+        restartConfirmation.gameObject.SetActive(true);
     }
 
     public void StartGame()
@@ -147,6 +151,16 @@ public class GameManager : MonoBehaviour
     public void MusicVolume()
     {
         
+    }
+
+    public void ShowSettings()
+    {
+        settingsScreen.gameObject.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        settingsScreen.gameObject.SetActive(false);
     }
 
 }

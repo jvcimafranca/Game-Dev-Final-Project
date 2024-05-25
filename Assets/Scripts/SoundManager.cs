@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static SoundManager instance { get; private set;}
+    private AudioSource audioSource;
+    // [SerializeField] private AudioClip introMusic;
+    void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if(instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     // Update is called once per frame
@@ -15,4 +28,11 @@ public class SoundManager : MonoBehaviour
     {
         
     }
+
+    public void PlaySound(AudioClip _sound) // for SoundFx
+    {
+        audioSource.PlayOneShot(_sound);
+    }
+
+
 }

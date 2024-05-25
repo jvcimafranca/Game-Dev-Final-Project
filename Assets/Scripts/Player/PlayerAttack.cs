@@ -29,6 +29,17 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // When the player enters the trigger zone, set the flag to true
+        if (collision.gameObject.CompareTag("Enemy") && isAttacking)
+        {
+            // isPlayerInRange = true;
+            Debug.Log("Enemy is hit!");
+            Destroy(collision.gameObject);
+        }
+    }
+
      private void Attack()
     {
          isAttacking = true;
@@ -54,4 +65,5 @@ public class PlayerAttack : MonoBehaviour
         playerAnimator.SetBool("isAttacking", false);
         isAttacking = false;
     }
+
 }

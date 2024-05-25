@@ -55,7 +55,9 @@ public class PlayerController : MonoBehaviour
                 coyoteCounter -= Time.deltaTime; // Decrease coyoteCounter over time
             }
 
-            if (Input.GetButtonDown("Jump")) {
+            // if (Input.GetButtonDown("Jump"))) {
+            if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
                 if (coyoteCounter > 0 || jumpCounter > 0) {
                     Jump(); // Trigger jump if within coyote time or if additional jumps are available
                 }
