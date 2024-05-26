@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject completeLevel;
     [SerializeField] private GameObject restartConfirmation;
+    [SerializeField] private GameObject exitConfirmation;
     [SerializeField]private bool isGameActive=false;
     // void Start()
     // {
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowConfirmation()
     {
+
         restartConfirmation.gameObject.SetActive(true);
         pauseScreen.gameObject.SetActive(false);
         // PauseGame(true);
@@ -73,6 +75,20 @@ public class GameManager : MonoBehaviour
     public void CancelConfirmation()
     {
         restartConfirmation.gameObject.SetActive(false);
+        PauseGame(false);
+    }
+
+      public void ShowExitConfirmation()
+    {
+
+        exitConfirmation.gameObject.SetActive(true);
+        pauseScreen.gameObject.SetActive(false);
+        // PauseGame(true);
+    }
+
+    public void CancelExitConfirmation()
+    {
+        exitConfirmation.gameObject.SetActive(false);
         PauseGame(false);
     }
 
