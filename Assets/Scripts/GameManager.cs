@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour
 
         exitConfirmation.gameObject.SetActive(true);
         pauseScreen.gameObject.SetActive(false);
+        gameOverScreen.gameObject.SetActive(false);
         // PauseGame(true);
     }
 

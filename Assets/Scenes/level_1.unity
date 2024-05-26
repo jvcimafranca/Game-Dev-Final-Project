@@ -3743,7 +3743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &286457779
 Transform:
   m_ObjectHideFlags: 0
@@ -10259,7 +10259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &896604261
 Transform:
   m_ObjectHideFlags: 0
@@ -11566,7 +11566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1081883477
 Transform:
   m_ObjectHideFlags: 0
@@ -27351,7 +27351,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2300432121411022210, guid: ab40fceea121ed04b993c9027f13c0de, type: 3}
       propertyPath: m_Mass
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7702712711754656531, guid: ab40fceea121ed04b993c9027f13c0de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31175,7 +31175,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406832824}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: ShowExitConfirmation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34162,6 +34162,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 173845349}
     m_Modifications:
+    - target: {fileID: 2300432121411022210, guid: ab40fceea121ed04b993c9027f13c0de, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7702712711754656531, guid: ab40fceea121ed04b993c9027f13c0de, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.89

@@ -587,7 +587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BoundingShape2D: {fileID: 1808613473}
-  m_Damping: 0.5
+  m_Damping: 0
   m_MaxWindowSize: -1
 --- !u!1001 &8262028
 PrefabInstance:
@@ -27287,7 +27287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BoundingShape2D: {fileID: 1808613473}
-  m_Damping: 0.5
+  m_Damping: 0
   m_MaxWindowSize: -1
 --- !u!114 &1062309066
 MonoBehaviour:
@@ -34758,7 +34758,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 189751611}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: ShowExitConfirmation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -81834,7 +81834,7 @@ MonoBehaviour:
   m_BoundingVolume: {fileID: 0}
   m_BoundingShape2D: {fileID: 1808613473}
   m_ConfineScreenEdges: 1
-  m_Damping: 0.5
+  m_Damping: 0
 --- !u!1001 &2004843332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83677,7 +83677,7 @@ MonoBehaviour:
   m_BoundingVolume: {fileID: 0}
   m_BoundingShape2D: {fileID: 1808613473}
   m_ConfineScreenEdges: 1
-  m_Damping: 0.5
+  m_Damping: 0
 --- !u!1 &2097002795 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2299458781101142823, guid: 51fc6b0a7d1193841a570bd4dbdbe8ab, type: 3}
