@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject completeLevel;
     [SerializeField] private GameObject restartConfirmation;
     [SerializeField] private GameObject exitConfirmation;
+
+    [SerializeField] private GameObject levelTitleScreen;
     [SerializeField]private bool isGameActive=false;
     // void Start()
     // {
@@ -164,6 +166,21 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
+        // isGameActive =  true;
+        // inGameScreen.gameObject.SetActive(false);
+        levelTitleScreen.gameObject.SetActive(true);
+        Invoke("PlayLevel", 10f);
+        
+        // SceneManager.LoadScene(nextLevel);
+
+        
+    }
+
+    private void PlayLevel()
+    {
+        levelTitleScreen.gameObject.SetActive(false);
+        completeLevel.gameObject.SetActive(false);
+        // inGameScreen.gameObject.SetActive(true);
         isGameActive =  true;
         SceneManager.LoadScene(nextLevel);
     }

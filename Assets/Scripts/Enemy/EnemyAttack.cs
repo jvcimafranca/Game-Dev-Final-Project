@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    private bool isPlayerInRange = false;
+    // private bool isPlayerInRange = false;
     private Animator animator;
     [SerializeField] private BoxCollider2D enemyCollider;
     [SerializeField] private float damage;
@@ -57,7 +57,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (collision.CompareTag("Player1") || collision.CompareTag("Player2"))
         {
-            isPlayerInRange = true;
+            // isPlayerInRange = true;
             Debug.Log("Player entered trigger zone");
             animator.SetBool("isAttack", true);
             enemyCollider.size = new Vector3(1.05f, 0.58f); // adjust collider size to explode bomb on a certain radius
@@ -73,7 +73,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (collision.CompareTag("Player1") || collision.CompareTag("Player2"))
         {
-            isPlayerInRange = false;
+            // isPlayerInRange = false;
             Debug.Log("Player exited trigger zone");    
             animator.SetBool("isAttack", false);
             enemyCollider.size = new Vector3(0.59f, 0.58f);

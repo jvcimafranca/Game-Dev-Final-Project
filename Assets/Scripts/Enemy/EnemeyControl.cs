@@ -7,7 +7,7 @@ public class EnemyControl : MonoBehaviour
     // public Transform rightPoint; 
     [SerializeField] private float leftPoint = 0;
     [SerializeField] private float rightPoint = 0;
-    [SerializeField] private float zPosition = -0.85f;
+    // [SerializeField] private float zPosition = -0.85f;
     // private Animator animator;
 
     private bool movingRight = true;
