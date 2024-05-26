@@ -29,15 +29,28 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // When the player enters the trigger zone, set the flag to true
-        if (collision.gameObject.CompareTag("Enemy") && isAttacking)
-        {
-            // isPlayerInRange = true;
-            Debug.Log("Enemy is hit!");
-            // Destroy(collision.gameObject);
+    //  private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     // When the player enters the trigger zone, set the flag to true
+    //     if (collision.gameObject.CompareTag("Enemy") && isAttacking)
+    //     {
+    //         // isPlayerInRange = true;
+    //         Debug.Log("Enemy is hit!");
+    //         // Destroy(collision.gameObject);
 
+    //         EnemyDie enemy = collision.gameObject.GetComponent<EnemyDie>();
+    //         if (enemy != null)
+    //         {
+    //             enemy.TakeHit(); // Increment the hit counter
+    //         }
+    //     }
+    // }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy") && isAttacking)
+        {
+            Debug.Log("Enemy is hit!");
             EnemyDie enemy = collision.gameObject.GetComponent<EnemyDie>();
             if (enemy != null)
             {
@@ -48,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
 
      private void Attack()
     {
-         isAttacking = true;
+        isAttacking = true;
         // Enable the sword and body prefabs
         swordPrefab.SetActive(true);
         bodyPrefab.SetActive(true);

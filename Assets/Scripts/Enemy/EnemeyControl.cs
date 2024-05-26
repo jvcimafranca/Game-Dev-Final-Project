@@ -28,8 +28,9 @@ public class EnemyControl : MonoBehaviour
         // Move towards the target position
         Vector2 targetPosition = new Vector2(targetX, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+        
         // Move towards the target position while keeping the z position fixed
-        // Vector3 targetPosition = new Vector3(targetX, transform.position.y, zPosition);
+        // Vector3 targetPosition = new Vector3(targetX, transform.position.y, 0.85f);
         // transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
 
