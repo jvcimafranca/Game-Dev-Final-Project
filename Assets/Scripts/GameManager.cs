@@ -19,9 +19,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject completeLevel;
     [SerializeField] private GameObject restartConfirmation;
     [SerializeField] private GameObject exitConfirmation;
-
     [SerializeField] private GameObject levelTitleScreen;
+    // [SerializeField] private GameObject endingScreen;
     [SerializeField]private bool isGameActive=false;
+    [SerializeField] private float timeToPlayVid = 10f;
     // void Start()
     // {
     //     titleScreen.gameObject.SetActive(true);
@@ -169,7 +170,7 @@ public class GameManager : MonoBehaviour
         // isGameActive =  true;
         // inGameScreen.gameObject.SetActive(false);
         levelTitleScreen.gameObject.SetActive(true);
-        Invoke("PlayLevel", 10f);
+        Invoke("PlayLevel", timeToPlayVid);
         
         // SceneManager.LoadScene(nextLevel);
 
@@ -183,6 +184,17 @@ public class GameManager : MonoBehaviour
         // inGameScreen.gameObject.SetActive(true);
         isGameActive =  true;
         SceneManager.LoadScene(nextLevel);
+    }
+
+    public void PlayEnding()
+    {
+        levelTitleScreen.gameObject.SetActive(true);
+        completeLevel.gameObject.SetActive(false);
+        Invoke("DelayedSkip", 20f);
+        // endingScreen.gameObject.SetActive(true);
+        // Invoke("PlayLevel", 10f);
+        
+        // SceneManager.LoadScene(nextLevel);
     }
 
     public void SoundVolume()
