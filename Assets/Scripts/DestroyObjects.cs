@@ -5,18 +5,29 @@ using UnityEngine;
 public class DestroyObjects : MonoBehaviour
 {
     private bool isPlayerInRange = false;
+    private ParticleFx particleFx;
     // [SerializeField] private GameObject portal;
-
+    void Start()
+    {
+        particleFx = GetComponent<ParticleFx>();
+    }
     // Update is called once per frame
      void Update()
     {
         // Only flip the lever if the player is in range and the "F" key is pressed
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
         {
-            Destroy(this.gameObject);
+            particleFx.PlayDestroyParticle();
+            // Destroy(this.gameObject);
+            Invoke("DestroyDelay",0.4f);
             Debug.Log("Stone Destroyed");
             // portal.SetActive(true); // Uncomment if you have a portal to activate
         }
+    }
+
+    private void DestroyDelay()
+    {
+        Destroy(this.gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

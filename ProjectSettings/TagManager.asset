@@ -13,6 +13,7 @@ TagManager:
   - Boxes
   - Enemy
   - EnemyProximity
+  - Level3
   layers:
   - Default
   - TransparentFX

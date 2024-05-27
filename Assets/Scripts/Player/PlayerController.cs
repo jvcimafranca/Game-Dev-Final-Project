@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private float jumpCounter;
     private float currentSpeed;
     private bool enemyInProximity = false;
+    private bool inLevel3 = false;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -47,11 +48,11 @@ public class PlayerController : MonoBehaviour
 
             Flip();
 
-            if(enemyInProximity)
+            if(enemyInProximity && inLevel3)
             {
                 extraJumps = 0;
             }
-            else 
+            else if (!enemyInProximity && inLevel3) 
             {
                 extraJumps = 1;
             }
@@ -157,8 +158,19 @@ public class PlayerController : MonoBehaviour
         // When the player enters the trigger zone, set the flag to true
         if (collision.CompareTag("EnemyProximity"))
         {
-            enemyInProximity = true;
-            Debug.Log("Enemy in Proximity");
+            // if (collision.CompareTag("Level3"))
+            // {
+                enemyInProximity = true;
+                Debug.Log("Enemy in Proximity");
+            // }
+            
+        }
+
+        if (collision.CompareTag("Level3"))
+        {
+                inLevel3 = true;
+                Debug.Log("Enemy in Level3");
+        
         }
     }
 
@@ -167,8 +179,45 @@ public class PlayerController : MonoBehaviour
         // When the player exits the trigger zone, reset the flag to false
         if (collision.CompareTag("EnemyProximity"))
         {
-            enemyInProximity = false;
-            Debug.Log("Enemy in Proximity");
+            // if (collision.CompareTag("Level3"))
+            // {
+                enemyInProximity = false;
+                Debug.Log("Enemy not in Proximity");
+            // }
+        }
+
+        if (collision.CompareTag("Level3"))
+        {
+                inLevel3 = false;
+                Debug.Log("Enemy not in Level3");
+        
         }
     }
+
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     // When the player enters the trigger zone, set the flag to true
+    //     if (collision.CompareTag("Level3"))
+    //     {
+    //         // if (collision.CompareTag("Level3"))
+    //         // {
+    //             inLevel3 = true;
+    //             Debug.Log("Enemy in Level3");
+    //         // }
+            
+    //     }
+    // }
+
+    // private void OnTriggerExit2D(Collider2D collision)
+    // {
+    //     // When the player exits the trigger zone, reset the flag to false
+    //     if (collision.CompareTag("Level3"))
+    //     {
+    //         // if (collision.CompareTag("Level3"))
+    //         // {
+    //             inLevel3 = false;
+    //             Debug.Log("Enemy in Level3");
+    //         // }
+    //     }
+    // }
 }
