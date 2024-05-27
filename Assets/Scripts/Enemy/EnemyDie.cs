@@ -6,7 +6,11 @@ public class EnemyDie : MonoBehaviour
 {
     private int hitCounter = 0;
     public int maxHits = 3;
-
+    private ParticleFx particleFx;
+    void Start()
+    {
+        particleFx = GetComponent<ParticleFx>();
+    }
     public void TakeHit()
     {
         hitCounter++;
@@ -21,6 +25,13 @@ public class EnemyDie : MonoBehaviour
     private void Die()
     {
         Debug.Log("Enemy killed!");
-        Destroy(gameObject);
+        particleFx.PlayDestroyParticle();
+        // Destroy(gameObject);
+        Invoke("DestroyDelay",0.5f);
+    }
+
+    private void DestroyDelay()
+    {
+        Destroy(this.gameObject);
     }
 }

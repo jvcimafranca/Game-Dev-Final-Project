@@ -5,6 +5,7 @@ using UnityEngine;
 public class DestroyObjects : MonoBehaviour
 {
     private bool isPlayerInRange = false;
+    private bool isHit = false;
     private ParticleFx particleFx;
     // [SerializeField] private GameObject portal;
     void Start()
@@ -15,7 +16,8 @@ public class DestroyObjects : MonoBehaviour
      void Update()
     {
         // Only flip the lever if the player is in range and the "F" key is pressed
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
+        // if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
+        if (isHit)
         {
             particleFx.PlayDestroyParticle();
             // Destroy(this.gameObject);
@@ -29,7 +31,14 @@ public class DestroyObjects : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+    if (collision.gameObject.CompareTag("Hammer"))
+            {
+                isHit = true;
+                Debug.Log("Object is Hit");
+            }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // When the player enters the trigger zone, set the flag to true
@@ -38,6 +47,7 @@ public class DestroyObjects : MonoBehaviour
             isPlayerInRange = true;
             Debug.Log("Player entered trigger zone");
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
