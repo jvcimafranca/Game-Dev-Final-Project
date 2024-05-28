@@ -7,9 +7,11 @@ public class EnemyDie : MonoBehaviour
     private int hitCounter = 0;
     public int maxHits = 3;
     private ParticleFx particleFx;
+    private NonPlayerSoundFx nonPlayerSoundFx;
     void Start()
     {
         particleFx = GetComponent<ParticleFx>();
+        nonPlayerSoundFx = GetComponent<NonPlayerSoundFx>();
     }
     public void TakeHit()
     {
@@ -18,6 +20,7 @@ public class EnemyDie : MonoBehaviour
 
         if (hitCounter >= maxHits)
         {
+            nonPlayerSoundFx.PlayEnemyDeathSfx();
             Die();
         }
     }

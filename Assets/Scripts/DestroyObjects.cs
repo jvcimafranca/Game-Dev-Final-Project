@@ -7,10 +7,12 @@ public class DestroyObjects : MonoBehaviour
     private bool isPlayerInRange = false;
     private bool isHit = false;
     private ParticleFx particleFx;
+    private NonPlayerSoundFx nonPlayerSoundFx;
     // [SerializeField] private GameObject portal;
     void Start()
     {
         particleFx = GetComponent<ParticleFx>();
+        nonPlayerSoundFx = GetComponent<NonPlayerSoundFx>();
     }
     // Update is called once per frame
      void Update()
@@ -21,8 +23,10 @@ public class DestroyObjects : MonoBehaviour
         {
             particleFx.PlayDestroyParticle();
             // Destroy(this.gameObject);
+            
             Invoke("DestroyDelay",0.4f);
             Debug.Log("Stone Destroyed");
+            
             // portal.SetActive(true); // Uncomment if you have a portal to activate
         }
     }
@@ -36,6 +40,7 @@ public class DestroyObjects : MonoBehaviour
     if (collision.gameObject.CompareTag("Hammer"))
             {
                 isHit = true;
+                nonPlayerSoundFx.PlayStoneBreakSfx();
                 Debug.Log("Object is Hit");
             }
     }

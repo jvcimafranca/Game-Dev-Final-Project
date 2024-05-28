@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator playerAnimator;
     private bool isAttacking = false; // To prevent multiple attacks per click
     [SerializeField] private BoxCollider2D swordCollider;
+    private WilSoundFx wilSoundFx;
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
@@ -17,6 +18,7 @@ public class PlayerAttack : MonoBehaviour
         swordCollider = swordPrefab.GetComponent<BoxCollider2D>(); // Get the BoxCollider2D component from the sword prefab
         
         swordCollider.enabled = false; // Ensure the collider is initially disabled
+        wilSoundFx = GetComponent<WilSoundFx>();
         
     }
 
@@ -26,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0)&& !isAttacking) // Check if the left mouse button is clicked
         {
             Attack();
+            wilSoundFx.PlaySwordSfx();
         }
     }
 

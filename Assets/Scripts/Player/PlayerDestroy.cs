@@ -11,6 +11,7 @@ public class PlayerDestroy : MonoBehaviour
     [SerializeField] private BoxCollider2D swordCollider;
     private ParticleFx particleFx;
     private GameObject objectToDestroy;
+    private WilSoundFx wilSoundFx;
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
@@ -20,6 +21,7 @@ public class PlayerDestroy : MonoBehaviour
         
         swordCollider.enabled = false; // Ensure the collider is initially disabled
         particleFx = GetComponent<ParticleFx>();
+        wilSoundFx = GetComponent<WilSoundFx>();
         
     }
 
@@ -29,6 +31,8 @@ public class PlayerDestroy : MonoBehaviour
         if (Input.GetMouseButtonDown(0)&& !isAttacking) // Check if the left mouse button is clicked
         {
             Attack();
+            wilSoundFx.PlayHammerSfx();
+            
         }
     }
 
@@ -84,6 +88,7 @@ public class PlayerDestroy : MonoBehaviour
         swordCollider.enabled = true;
         // Set the isAttacking parameter in the animator to true
         playerAnimator.SetBool("isAttacking", true);
+
 
         // Optionally, you can disable the sword and body prefabs after a delay
         StartCoroutine(DisableAfterDelay());
