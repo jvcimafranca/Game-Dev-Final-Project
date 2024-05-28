@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject restartConfirmation;
     [SerializeField] private GameObject exitConfirmation;
     [SerializeField] private GameObject levelTitleScreen;
+    [SerializeField] private GameObject convoScreen;
     // [SerializeField] private GameObject endingScreen;
     [SerializeField]private bool isGameActive=false;
     [SerializeField] private float timeToPlayVid = 10f;
@@ -86,7 +87,7 @@ public class GameManager : MonoBehaviour
 
         exitConfirmation.gameObject.SetActive(true);
         pauseScreen.gameObject.SetActive(false);
-        gameOverScreen.gameObject.SetActive(false);
+        // gameOverScreen.gameObject.SetActive(false);
         // PauseGame(true);
     }
 
@@ -184,6 +185,7 @@ public class GameManager : MonoBehaviour
         // inGameScreen.gameObject.SetActive(true);
         isGameActive =  true;
         SceneManager.LoadScene(nextLevel);
+        // convoScreen.gameObject.SetActive(true);
     }
 
     public void PlayEnding()
@@ -215,6 +217,11 @@ public class GameManager : MonoBehaviour
     public void CloseSettings()
     {
         settingsScreen.gameObject.SetActive(false);
+    }
+
+    public void SkipConvo()
+    {
+        convoScreen.gameObject.SetActive(false);
     }
 
 }
