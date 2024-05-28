@@ -10,11 +10,13 @@ public class Health : MonoBehaviour
     private Animator playerAnimator;
     private bool dead;
     private PlayerRespawn respawnPlayer;
+    private WilSoundFx wilSoundFx;
 
     void Start()
     {
         playerAnimator = GetComponent<Animator>(); 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        wilSoundFx = GetComponent<WilSoundFx>();
     }
     private void Awake()
     {
@@ -72,6 +74,7 @@ public class Health : MonoBehaviour
         {
             Respawn();
             // respawnPlayer.Respawn();
+            wilSoundFx.PlayGameOverSfx();
             gameManager.DisplayGameOver();
 
         }
