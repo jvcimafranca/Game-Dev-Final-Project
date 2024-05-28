@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
     [SerializeField] private float extraJumps;
+    private WilSoundFx wilSoundFx;
 
      // Boundary limits
     [SerializeField] private float minX = -10f;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        wilSoundFx = GetComponent<WilSoundFx>(); // gets the component from another script
     }
 
     // Update is called once per frame
@@ -70,6 +72,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (coyoteCounter > 0 || jumpCounter > 0) {
                     Jump(); // Trigger jump if within coyote time or if additional jumps are available
+                    
                 }
             }
             if(verticalInput<-0.01f){
@@ -107,7 +110,7 @@ public class PlayerController : MonoBehaviour
         // playerAnimator.SetBool("isJumping", true); 
         if (IsGrounded() || coyoteCounter > 0 || jumpCounter > 0) {
             body.velocity = new Vector2(body.velocity.x, jumpForce); // Apply jump force
-            
+            wilSoundFx.PlayJumpSfx();
             if (!IsGrounded()) {
                 if (jumpCounter > 0) {
                     jumpCounter--; // Decrement extra jumps when using double jump
