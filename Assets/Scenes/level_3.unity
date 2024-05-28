@@ -189,7 +189,7 @@ Transform:
   m_GameObject: {fileID: 6392959}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 573.158, y: 145.24983, z: -7.7060366}
+  m_LocalPosition: {x: 207.35803, y: 140.14984, z: -7.7060366}
   m_LocalScale: {x: 1.0093178, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8237,7 +8237,7 @@ Transform:
   m_GameObject: {fileID: 814465929}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 451.3059, y: 96.81298, z: -7.4250727}
+  m_LocalPosition: {x: 97.76575, y: 93.93946, z: -7.4250727}
   m_LocalScale: {x: 3.3943484, y: 3.368644, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9497,11 +9497,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6773722683446554657, guid: cf539df15b55df043b97b5b8b6229467, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 478.5
+      value: 112.7
       objectReference: {fileID: 0}
     - target: {fileID: 6773722683446554657, guid: cf539df15b55df043b97b5b8b6229467, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 85.4
+      value: 80.3
       objectReference: {fileID: 0}
     - target: {fileID: 6773722683446554657, guid: cf539df15b55df043b97b5b8b6229467, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11085,8 +11085,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ae39f16c382cd469e8f25017a8c449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: 4
-  nextLevel: 4
+  currentLevel: 3
+  nextLevel: 3
   titleScreen: {fileID: 0}
   settingsScreen: {fileID: 0}
   introVid: {fileID: 0}
@@ -56864,7 +56864,7 @@ Transform:
   m_GameObject: {fileID: 2004789985}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 573.158, y: 145.24983, z: -7.7060366}
+  m_LocalPosition: {x: 207.35803, y: 140.14984, z: -7.7060366}
   m_LocalScale: {x: 1.0093178, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57276,7 +57276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3702257898038734564, guid: 9d2d92c965a65284890645311434be53, type: 3}
       propertyPath: extraJumps
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3702257898038734564, guid: 9d2d92c965a65284890645311434be53, type: 3}
       propertyPath: gameManager

@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
     {
         // titleScreen.gameObject.SetActive(true);
         // inGameScreen.gameObject.SetActive(false);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     private void StopIntro()

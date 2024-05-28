@@ -5177,8 +5177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ae39f16c382cd469e8f25017a8c449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: 2
-  nextLevel: 3
+  currentLevel: 1
+  nextLevel: 2
   titleScreen: {fileID: 0}
   settingsScreen: {fileID: 0}
   introVid: {fileID: 0}

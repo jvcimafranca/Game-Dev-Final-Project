@@ -414,8 +414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ae39f16c382cd469e8f25017a8c449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: 1
-  nextLevel: 2
+  currentLevel: 0
+  nextLevel: 1
   titleScreen: {fileID: 1747732815}
   settingsScreen: {fileID: 1924492470}
   introVid: {fileID: 2115250088}
@@ -426,7 +426,9 @@ MonoBehaviour:
   completeLevel: {fileID: 0}
   restartConfirmation: {fileID: 0}
   exitConfirmation: {fileID: 0}
+  levelTitleScreen: {fileID: 0}
   isGameActive: 0
+  timeToPlayVid: 10
 --- !u!4 &36647433
 Transform:
   m_ObjectHideFlags: 0
@@ -4477,7 +4479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -4}
+  m_AnchoredPosition: {x: -5, y: 4}
   m_SizeDelta: {x: 1956, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1487312278
