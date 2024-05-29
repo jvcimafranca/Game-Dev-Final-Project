@@ -5,9 +5,10 @@ using UnityEngine;
 public class Spikes : MonoBehaviour
 {
     [SerializeField] private float damage;
+    private NonPlayerSoundFx nonPlayerSoundFx;
     void Start()
     {
-        
+        nonPlayerSoundFx = GetComponent<NonPlayerSoundFx>();
     }
 
     // Update is called once per frame
@@ -22,6 +23,7 @@ public class Spikes : MonoBehaviour
         if(collision.tag == "Player1")
         {
             collision.GetComponent<Health>().TakeDamage(damage);
+            nonPlayerSoundFx.PlayHurtSfx();
         }
     }
 }

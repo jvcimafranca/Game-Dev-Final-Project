@@ -29803,6 +29803,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSfx: {fileID: 8300000, guid: 8eae9ea17f80870429bb0c5c6423fa74, type: 3}
+  hammerSfx: {fileID: 0}
+  swordSfx: {fileID: 0}
+  hurtSfx: {fileID: 8300000, guid: 1b8021a92b2431d4fbc6e97eb2804b3f, type: 3}
   gameOverSfx: {fileID: 8300000, guid: 7eb70838f60ca8143a69af62a391174c, type: 3}
 --- !u!82 &1343526036
 AudioSource:

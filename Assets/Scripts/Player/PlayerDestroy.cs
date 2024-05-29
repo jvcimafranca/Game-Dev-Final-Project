@@ -12,6 +12,7 @@ public class PlayerDestroy : MonoBehaviour
     private ParticleFx particleFx;
     private GameObject objectToDestroy;
     private WilSoundFx wilSoundFx;
+    
     void Start()
     {
         playerAnimator = GetComponent<Animator>();

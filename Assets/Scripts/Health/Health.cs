@@ -64,11 +64,12 @@ public class Health : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             TakeDamage(1);
+           
         }
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            AddHealth(1);
-        }
+        // if(Input.GetKeyDown(KeyCode.R))
+        // {
+        //     AddHealth(1);
+        // }
 
         if(dead)
         {

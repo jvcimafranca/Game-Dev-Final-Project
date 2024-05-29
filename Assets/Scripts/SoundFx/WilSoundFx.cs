@@ -40,4 +40,5 @@ public class WilSoundFx : MonoBehaviour
     {
         playerSfxSource.PlayOneShot(swordSfx, 1f);
     }
+    
 }

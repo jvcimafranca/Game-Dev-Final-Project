@@ -48,9 +48,15 @@ public class PlayerSwitch : MonoBehaviour
         // playerAttack.enabled = false;
         // playerAttack2.enabled = false;
         PlayerAttack player2Attack = player2Controller.GetComponent<PlayerAttack>();
+        PlayerDestroy player2Destroy = player2Controller.GetComponent<PlayerDestroy>();
         if (player2Attack != null)
         {
             player2Attack.enabled = false;
+        }
+
+        if (player2Destroy != null)
+        {
+            player2Destroy.enabled = false;
         }
         camera1.SetActive(false);
         camera2.SetActive(false);
@@ -70,6 +76,11 @@ public class PlayerSwitch : MonoBehaviour
                 if (player2Attack != null)
                 {
                     player2Attack.enabled = true;
+                }
+
+                if (player2Destroy != null)
+                {
+                    player2Destroy.enabled = true;
                 }
                 break;
             // case 3:
