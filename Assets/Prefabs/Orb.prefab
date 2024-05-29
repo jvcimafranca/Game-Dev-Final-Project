@@ -155,7 +155,7 @@ AudioSource:
   m_GameObject: {fileID: 1856192709922635251}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3199222367936928283, guid: acba5f70f3105b7418f28dff08950f47, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -255,3 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbSfx: {fileID: 8300000, guid: bcd571564cd06d242af6ce108463b50e, type: 3}
+  stoneBreakSfx: {fileID: 0}
+  enemyDeathSfx: {fileID: 0}
+  playerHurtSfx: {fileID: 0}
+  leverSfx: {fileID: 0}
