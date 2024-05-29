@@ -6,9 +6,14 @@ public class TriggerLever : MonoBehaviour
 {
     private bool isPlayerInRange = false;
     [SerializeField] private GameObject portal;
+    private NonPlayerSoundFx nonPlayerSoundFx;
     // [SerializeField] private GameObject hideObject;
 
     // Update is called once per frame
+    void Start()
+    {
+        nonPlayerSoundFx = GetComponent<NonPlayerSoundFx>();
+    }
     void Update()
     {
         // Only flip the lever if the player is in range and the "F" key is pressed
@@ -18,6 +23,7 @@ public class TriggerLever : MonoBehaviour
             currentScale.y *= -1; // Flip the lever by changing its vertical scale
             transform.localScale = currentScale;
             
+            nonPlayerSoundFx.PlayleverSfx();
             Debug.Log("Lever Flipped");
             portal.SetActive(true);
             // hideObject.SetActive(false);

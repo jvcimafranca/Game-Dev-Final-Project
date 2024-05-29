@@ -9,6 +9,7 @@ public class NonPlayerSoundFx : MonoBehaviour
     [SerializeField] private AudioClip stoneBreakSfx;
     [SerializeField] private AudioClip enemyDeathSfx;
     [SerializeField] private AudioClip playerHurtSfx;
+    [SerializeField] private AudioClip leverSfx;
     private AudioSource playerSfxSource;
     void Start()
     {
@@ -39,5 +40,10 @@ public class NonPlayerSoundFx : MonoBehaviour
     public void PlayHurtSfx()
     {
         playerSfxSource.PlayOneShot(playerHurtSfx, 1f);
+    }
+
+    public void PlayleverSfx()
+    {
+        playerSfxSource.PlayOneShot(leverSfx, 1f);
     }
 }

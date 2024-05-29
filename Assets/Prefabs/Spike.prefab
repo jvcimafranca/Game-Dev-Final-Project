@@ -161,7 +161,7 @@ MonoBehaviour:
   orbSfx: {fileID: 8300000, guid: bcd571564cd06d242af6ce108463b50e, type: 3}
   stoneBreakSfx: {fileID: 8300000, guid: 99dc373d3ecb12c4d91b8c36654dc46d, type: 3}
   enemyDeathSfx: {fileID: 8300000, guid: 440ba893e29167047a4335d6db5c26f7, type: 3}
-  playerHurtSfx: {fileID: 8300000, guid: 1b8021a92b2431d4fbc6e97eb2804b3f, type: 3}
+  playerHurtSfx: {fileID: 8300000, guid: 481a0ec6f618cfd4594a264455ffdf29, type: 3}
 --- !u!82 &2857190371593406250
 AudioSource:
   m_ObjectHideFlags: 0
