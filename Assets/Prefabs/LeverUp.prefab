@@ -244,4 +244,4 @@ MonoBehaviour:
   stoneBreakSfx: {fileID: 8300000, guid: 99dc373d3ecb12c4d91b8c36654dc46d, type: 3}
   enemyDeathSfx: {fileID: 8300000, guid: 440ba893e29167047a4335d6db5c26f7, type: 3}
   playerHurtSfx: {fileID: 8300000, guid: 481a0ec6f618cfd4594a264455ffdf29, type: 3}
-  leverSfx: {fileID: 8300000, guid: 342ab6c6046a0c6438993d84c53a8bcf, type: 3}
+  leverSfx: {fileID: 8300000, guid: 5b1890620edcd9f439c27d5e3b79ba26, type: 3}

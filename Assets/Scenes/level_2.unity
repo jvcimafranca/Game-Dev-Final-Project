@@ -5692,6 +5692,26 @@ Transform:
   - {fileID: 150001333}
   m_Father: {fileID: 141586915}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &233997220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4674444124568822832, guid: 29659cdc896f3ce4e83aa4365e76b046, type: 3}
+  m_PrefabInstance: {fileID: 2025074479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &233997223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233997220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd45376f2c856644eab0ebb21d89378d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 695520499}
+  totalhealthBar: {fileID: 129526467}
+  currenthealthBar: {fileID: 150001331}
 --- !u!1001 &238556061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14298,6 +14318,8 @@ MonoBehaviour:
   orbSfx: {fileID: 8300000, guid: bcd571564cd06d242af6ce108463b50e, type: 3}
   stoneBreakSfx: {fileID: 8300000, guid: 99dc373d3ecb12c4d91b8c36654dc46d, type: 3}
   enemyDeathSfx: {fileID: 0}
+  playerHurtSfx: {fileID: 0}
+  leverSfx: {fileID: 0}
 --- !u!82 &524386867
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24306,6 +24328,8 @@ MonoBehaviour:
   orbSfx: {fileID: 8300000, guid: bcd571564cd06d242af6ce108463b50e, type: 3}
   stoneBreakSfx: {fileID: 8300000, guid: 99dc373d3ecb12c4d91b8c36654dc46d, type: 3}
   enemyDeathSfx: {fileID: 0}
+  playerHurtSfx: {fileID: 0}
+  leverSfx: {fileID: 0}
 --- !u!82 &804775713
 AudioSource:
   m_ObjectHideFlags: 0
@@ -28920,6 +28944,8 @@ MonoBehaviour:
   orbSfx: {fileID: 8300000, guid: bcd571564cd06d242af6ce108463b50e, type: 3}
   stoneBreakSfx: {fileID: 8300000, guid: 99dc373d3ecb12c4d91b8c36654dc46d, type: 3}
   enemyDeathSfx: {fileID: 0}
+  playerHurtSfx: {fileID: 0}
+  leverSfx: {fileID: 0}
 --- !u!82 &953950916
 AudioSource:
   m_ObjectHideFlags: 0
@@ -33222,6 +33248,8 @@ MonoBehaviour:
   orbSfx: {fileID: 8300000, guid: bcd571564cd06d242af6ce108463b50e, type: 3}
   stoneBreakSfx: {fileID: 8300000, guid: 99dc373d3ecb12c4d91b8c36654dc46d, type: 3}
   enemyDeathSfx: {fileID: 0}
+  playerHurtSfx: {fileID: 0}
+  leverSfx: {fileID: 0}
 --- !u!82 &1109615105
 AudioSource:
   m_ObjectHideFlags: 0
@@ -35748,6 +35776,8 @@ MonoBehaviour:
   orbSfx: {fileID: 8300000, guid: bcd571564cd06d242af6ce108463b50e, type: 3}
   stoneBreakSfx: {fileID: 8300000, guid: 99dc373d3ecb12c4d91b8c36654dc46d, type: 3}
   enemyDeathSfx: {fileID: 0}
+  playerHurtSfx: {fileID: 0}
+  leverSfx: {fileID: 0}
 --- !u!82 &1233008034
 AudioSource:
   m_ObjectHideFlags: 0
@@ -45285,6 +45315,8 @@ MonoBehaviour:
   orbSfx: {fileID: 8300000, guid: bcd571564cd06d242af6ce108463b50e, type: 3}
   stoneBreakSfx: {fileID: 8300000, guid: 99dc373d3ecb12c4d91b8c36654dc46d, type: 3}
   enemyDeathSfx: {fileID: 0}
+  playerHurtSfx: {fileID: 0}
+  leverSfx: {fileID: 0}
 --- !u!82 &1552188841
 AudioSource:
   m_ObjectHideFlags: 0
@@ -80969,6 +81001,8 @@ MonoBehaviour:
   orbSfx: {fileID: 8300000, guid: bcd571564cd06d242af6ce108463b50e, type: 3}
   stoneBreakSfx: {fileID: 8300000, guid: 99dc373d3ecb12c4d91b8c36654dc46d, type: 3}
   enemyDeathSfx: {fileID: 0}
+  playerHurtSfx: {fileID: 0}
+  leverSfx: {fileID: 0}
 --- !u!82 &1727131310
 AudioSource:
   m_ObjectHideFlags: 0
@@ -85594,6 +85628,8 @@ MonoBehaviour:
   orbSfx: {fileID: 8300000, guid: bcd571564cd06d242af6ce108463b50e, type: 3}
   stoneBreakSfx: {fileID: 8300000, guid: 99dc373d3ecb12c4d91b8c36654dc46d, type: 3}
   enemyDeathSfx: {fileID: 0}
+  playerHurtSfx: {fileID: 0}
+  leverSfx: {fileID: 0}
 --- !u!82 &1868748724
 AudioSource:
   m_ObjectHideFlags: 0
@@ -91067,7 +91103,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4674444124568822832, guid: 29659cdc896f3ce4e83aa4365e76b046, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 233997223}
   m_SourcePrefab: {fileID: 100100000, guid: 29659cdc896f3ce4e83aa4365e76b046, type: 3}
 --- !u!1001 &2035284221
 PrefabInstance:
@@ -94861,6 +94900,8 @@ MonoBehaviour:
   orbSfx: {fileID: 8300000, guid: bcd571564cd06d242af6ce108463b50e, type: 3}
   stoneBreakSfx: {fileID: 8300000, guid: 99dc373d3ecb12c4d91b8c36654dc46d, type: 3}
   enemyDeathSfx: {fileID: 0}
+  playerHurtSfx: {fileID: 0}
+  leverSfx: {fileID: 0}
 --- !u!82 &2139695762
 AudioSource:
   m_ObjectHideFlags: 0

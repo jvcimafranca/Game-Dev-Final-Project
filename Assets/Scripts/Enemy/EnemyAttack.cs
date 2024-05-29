@@ -8,10 +8,12 @@ public class EnemyAttack : MonoBehaviour
     private Animator animator;
     [SerializeField] private BoxCollider2D enemyCollider;
     [SerializeField] private float damage;
+    private NonPlayerSoundFx nonPlayerSoundFx;
     void Start()
     {
         animator = GetComponent<Animator>();
         enemyCollider = GetComponent<BoxCollider2D>();
+        nonPlayerSoundFx = GetComponent<NonPlayerSoundFx>();
     }
 
     // Update is called once per frame
@@ -61,10 +63,16 @@ public class EnemyAttack : MonoBehaviour
             Debug.Log("Player entered trigger zone");
             animator.SetBool("isAttack", true);
             enemyCollider.size = new Vector3(1.05f, 0.58f); // adjust collider size to explode bomb on a certain radius
-            if (collision.CompareTag("Player1"))
+            if (collision.CompareTag("Player1") || collision.CompareTag("Player2"))
             {
+                nonPlayerSoundFx.PlayHurtSfx();
                 collision.GetComponent<Health>().TakeDamage(damage);
             }
+            // if (collision.CompareTag("Player2"))
+            // {
+            //     nonPlayerSoundFx.PlayHurtSfx();
+            //     collision.GetComponent<Health>().TakeDamage(damage);
+            // }
             
         }
     }

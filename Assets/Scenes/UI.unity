@@ -427,6 +427,7 @@ MonoBehaviour:
   restartConfirmation: {fileID: 0}
   exitConfirmation: {fileID: 0}
   levelTitleScreen: {fileID: 0}
+  convoScreen: {fileID: 0}
   isGameActive: 0
   timeToPlayVid: 10
 --- !u!4 &36647433
@@ -5774,7 +5775,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 36647432}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

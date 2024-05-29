@@ -20,7 +20,7 @@ public class Spikes : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Spike Trigger");
-        if(collision.tag == "Player1")
+        if(collision.tag == "Player1" || collision.tag == "Player2")
         {
             collision.GetComponent<Health>().TakeDamage(damage);
             nonPlayerSoundFx.PlayHurtSfx();
