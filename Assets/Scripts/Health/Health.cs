@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         currentHealth = startingHealth;
-        AddHealth(startingHealth);
+        // AddHealth(startingHealth);
         respawnPlayer = GetComponent<PlayerRespawn>();
     }
 
