@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class BlockSpikes : MonoBehaviour
 {
-[SerializeField] private float damage = 10f;
+    [SerializeField] private float damage = 10f;
+    private NonPlayerSoundFx nonPlayerSoundFx;
 
     void Start()
     {
         // Initialization code if needed
+        nonPlayerSoundFx = GetComponent<NonPlayerSoundFx>();
     }
 
     void Update()
@@ -20,12 +22,13 @@ public class BlockSpikes : MonoBehaviour
     {
         Debug.Log("Spike Trigger");
 
-        if (collision.gameObject.CompareTag("Player1"))
+        if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2"))
         {
             Health playerHealth = collision.gameObject.GetComponent<Health>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
+                nonPlayerSoundFx.PlayHurtSfx();
             }
             else
             {

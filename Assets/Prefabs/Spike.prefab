@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed25718b8a3b47449f1c38fca5a9b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0.5
 --- !u!114 &3970697675594114467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +162,7 @@ MonoBehaviour:
   stoneBreakSfx: {fileID: 8300000, guid: 99dc373d3ecb12c4d91b8c36654dc46d, type: 3}
   enemyDeathSfx: {fileID: 8300000, guid: 440ba893e29167047a4335d6db5c26f7, type: 3}
   playerHurtSfx: {fileID: 8300000, guid: 481a0ec6f618cfd4594a264455ffdf29, type: 3}
+  leverSfx: {fileID: 0}
 --- !u!82 &2857190371593406250
 AudioSource:
   m_ObjectHideFlags: 0
