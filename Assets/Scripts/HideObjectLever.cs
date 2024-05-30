@@ -7,8 +7,13 @@ public class HideObjectLever : MonoBehaviour
     private bool isPlayerInRange = false;
     // [SerializeField] private GameObject portal;
     [SerializeField] private GameObject hideObject;
+    private NonPlayerSoundFx nonPlayerSoundFx;
 
     // Update is called once per frame
+    void Start()
+    {
+        nonPlayerSoundFx = GetComponent<NonPlayerSoundFx>();
+    }
     void Update()
     {
         // Only flip the lever if the player is in range and the "F" key is pressed
@@ -18,6 +23,7 @@ public class HideObjectLever : MonoBehaviour
             currentScale.y *= -1; // Flip the lever by changing its vertical scale
             transform.localScale = currentScale;
             
+            nonPlayerSoundFx.PlayleverSfx();
             Debug.Log("Lever Flipped");
             // portal.SetActive(true);
             hideObject.SetActive(false);
