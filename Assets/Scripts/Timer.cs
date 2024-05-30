@@ -50,7 +50,7 @@ public class Timer : MonoBehaviour
                 gameManager.DisplayGameOver();
             }
 
-            DisplayTimeTaken(120f - timeRemaining);
+            DisplayTimeTaken(900f - timeRemaining);
         
         }
     }
