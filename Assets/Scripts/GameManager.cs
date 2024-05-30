@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         // titleScreen.gameObject.SetActive(true);
         // inGameScreen.gameObject.SetActive(false);
         pauseScreen.SetActive(false);
+        // skipButton.gameObject.SetActive(true);
     }
     
     public void DisplayGameOver()
@@ -102,9 +103,11 @@ public class GameManager : MonoBehaviour
         isGameActive =  true;
         titleScreen.gameObject.SetActive(false);
         introVid.gameObject.SetActive(true);
-        skipButton.gameObject.SetActive(false);
-        Invoke("DelayedSkip", 3f);
+        // skipButton.gameObject.SetActive(false);
+        // Invoke("DelayedSkip", 3f);
         Invoke("StopIntro",54f);
+        skipButton.gameObject.SetActive(true);
+        PauseGame(false);
         
 
         // SceneManager.LoadScene(2);
@@ -146,7 +149,10 @@ public class GameManager : MonoBehaviour
     {
         // titleScreen.gameObject.SetActive(true);
         // inGameScreen.gameObject.SetActive(false);
+        
         SceneManager.LoadScene(0);
+        // skipButton.gameObject.SetActive(true);
+        
     }
 
     private void StopIntro()

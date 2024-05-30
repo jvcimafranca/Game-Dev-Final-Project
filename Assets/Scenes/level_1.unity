@@ -34974,7 +34974,7 @@ MonoBehaviour:
   gameManager: {fileID: 406832824}
   timerText: {fileID: 1998698238}
   timeTakenText: {fileID: 1992653092}
-  timeRemaining: 1200
+  timeRemaining: 900
 --- !u!4 &1746940237
 Transform:
   m_ObjectHideFlags: 0
