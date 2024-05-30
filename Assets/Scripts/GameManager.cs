@@ -230,4 +230,20 @@ public class GameManager : MonoBehaviour
         convoScreen.gameObject.SetActive(false);
     }
 
+    public void LoadLevel1()
+    {
+         isGameActive =  true;
+         SceneManager.LoadScene(1);
+    }
+    public void LoadLevel2()
+    {
+         isGameActive =  true;
+         SceneManager.LoadScene(2);
+    }
+    public void LoadLevel3()
+    {
+         isGameActive =  true;
+         SceneManager.LoadScene(3);
+    }
+
 }

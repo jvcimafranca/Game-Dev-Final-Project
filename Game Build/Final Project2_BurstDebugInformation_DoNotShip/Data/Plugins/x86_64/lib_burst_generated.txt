@@ -1,4 +1,4 @@
-Library: C:\Users\ACER\Documents\Unity Projects\Game-Dev-Final-Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+Library: D:\2nd Sem\197\New folder\New folder\final\Game-Dev-Final-Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --platform=Windows
 --backend=burst-llvm-16
 --target=X64_SSE2
@@ -52,10 +52,10 @@ Library: C:\Users\ACER\Documents\Unity Projects\Game-Dev-Final-Project\Temp\Burs
 --assembly-defines=mscorlib;
 --linker-options=PdbAltPath="Final Project2_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\ACER\Documents\Unity Projects\Game-Dev-Final-Project\Temp\Burst
---key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\ACER\Documents\Unity Projects\Game-Dev-Final-Project\Library\Burst
---output=C:\Users\ACER\Documents\Unity Projects\Game-Dev-Final-Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--temp-folder=D:\2nd Sem\197\New folder\New folder\final\Game-Dev-Final-Project\Temp\Burst
+--key-folder=D:/unity/Unity Hub/2022.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
+--decode-folder=D:\2nd Sem\197\New folder\New folder\final\Game-Dev-Final-Project\Library\Burst
+--output=D:\2nd Sem\197\New folder\New folder\final\Game-Dev-Final-Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -142,10 +142,10 @@ Library: C:\Users\ACER\Documents\Unity Projects\Game-Dev-Final-Project\Temp\Burs
 --assembly-defines=mscorlib;
 --linker-options=PdbAltPath="Final Project2_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\ACER\Documents\Unity Projects\Game-Dev-Final-Project\Temp\Burst
---key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\ACER\Documents\Unity Projects\Game-Dev-Final-Project\Library\Burst
---output=C:\Users\ACER\Documents\Unity Projects\Game-Dev-Final-Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--temp-folder=D:\2nd Sem\197\New folder\New folder\final\Game-Dev-Final-Project\Temp\Burst
+--key-folder=D:/unity/Unity Hub/2022.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
+--decode-folder=D:\2nd Sem\197\New folder\New folder\final\Game-Dev-Final-Project\Library\Burst
+--output=D:\2nd Sem\197\New folder\New folder\final\Game-Dev-Final-Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
